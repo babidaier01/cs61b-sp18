@@ -23,7 +23,6 @@ public class LinkedListDeque<T> {
 
     public void addFirst(T item) {
         IntNode newNode = new IntNode(item, sentinel.next, sentinel);
-        // 先改旧节点，再接新节点
         sentinel.next.prev = newNode;
         sentinel.next = newNode;
         size++;
@@ -35,7 +34,6 @@ public class LinkedListDeque<T> {
 
     public void addLast(T item) {
         IntNode newNode = new IntNode(item, sentinel, sentinel.prev);
-        //先改就节点，再加新节点
         sentinel.prev.next = newNode;
         sentinel.prev = newNode;
         size++;
@@ -103,17 +101,3 @@ public class LinkedListDeque<T> {
         return p.item;
     }
 }
-
-
-
-
-
-    /* public void addFirst(T item) */
-    /* public void addLast(T item) */
-    /* public boolean isEmpty() */
-    /* public int size() */
-    /* public void printDeque() */
-    /* public T removeFirst() */
-    /* public T removeLast() */
-    /* public T get(int index) */
-
